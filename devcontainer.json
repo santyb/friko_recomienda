@@ -1,0 +1,28 @@
+{
+  "name": "Friko Recomienda",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [8501],
+  "PortsAttributes": {
+    "8501": {
+      "label": "Streamlit App",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "secrets": {
+    "ANTHROPIC_API_KEY": {
+      "description": "Tu API key personal de Anthropic (https://console.anthropic.com/settings/keys)",
+      "documentationUrl": "https://docs.anthropic.com/en/docs/initial-setup#create-an-api-key"
+    }
+  }
+}
